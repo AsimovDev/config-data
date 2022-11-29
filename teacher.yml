@@ -1,0 +1,31 @@
+server:
+  port: 8081
+  error:
+    include-message: always
+    include-binding-errors: always
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/teachers?verifyServerCertificate=false&useSSL=false&useTimezone=true&serverTimezone=UTC
+    username: root
+    password: admin
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+axon:
+  axonserver:
+    servers: localhost
+#  eventhandling:
+      #processors:
+      #acountNumer:
+      #mode: subscribing
+eureka:
+  client:
+    serviceUri:
+      defaultZone: http://localhost:8761/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
